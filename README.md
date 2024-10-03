@@ -1,2 +1,16 @@
-# Python-BMI-calculator
-Make sure to install the library
+#Open CMD and type "pip install customtkinter"
+  result_label.configure(text=f"BMI: {bmi:.2f}\n{result}")
+    except:
+        result_label.configure(text="Enter valid numbers")
+frame = CTkFrame(master=app, fg_color="black", border_width=2, border_color="gray")
+frame.pack(expand=True)
+CTkLabel(master = frame, text="Height (m):").pack(anchor = "center", pady = 5)
+height_entry = CTkEntry(master=frame)
+height_entry.pack(anchor="center")
+CTkLabel(master=frame, text="Weight (kg):").pack(anchor="center", pady = 5)
+weight_entry = CTkEntry(master = frame)
+weight_entry.pack()
+CTkButton(master = frame, text="Calculate", command=calculate_bmi, border_width = 2, fg_color="black", hover_color="gray").pack(pady=10, padx = 40)
+result_label = CTkLabel(master = frame, text="")
+result_label.pack()
+app.mainloop()
